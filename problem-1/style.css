@@ -30,3 +30,8 @@
   /* Add a grey background color to the table header and on hover */
   background-color: #f1f1f1;
 }
+
+/*make every odd row of the table gray*/
+#contactTable tr:nth-of-type(odd) {
+    background-color: #f2f2f2;
+}

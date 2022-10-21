@@ -1,32 +1,78 @@
 
 let contactsList = [
+	{'name':'Kate Green', 'mobile':'0858769009', 'email':'kgreen@gmail.com'},
     {'name':'John Smith', 'mobile':'0867890586', 'email':'jsmith@gmail.com'},
-    {'name':'Kate Green', 'mobile':'0858769009', 'email':'kgreen@gmail.com'},
     {'name':'Paul Brown', 'mobile':'0858887945', 'email':'pbrown@gmail.com'},
 ];
 
 fillTable(contactsList);
 
 
-function fillTable(data)
+// sort the table by the name column
+function sort(contactsList)
+{
+	let isSorted = true;
+
+	// check if the table is alread sorted in ascending order
+	for(let i=0; i<contactsList.length-1; i++) 
+	{
+		if(contactsList[i].name > contactsList[i+1].name) 
+		{
+			isSorted = false;
+			break;
+		}
+	}
+	
+	// if it is not, sort it in ascending order
+	if(isSorted == false)
+	{
+		contactsList.sort((a, b) => (a.name > b.name) ? 1 : -1);
+		fillTable(contactsList);
+	}
+	// if it is, sort it in descending order
+	else
+	{
+		contactsList.reverse();
+		fillTable(contactsList);
+	}
+}
+
+
+// remove all the rows from the table except the header row
+function clearTable(table) 
+{
+    let rows = table.rows;
+    let i = rows.length;
+	
+    while(--i)
+	{
+        table.deleteRow(i);
+    }
+}
+
+
+
+function fillTable(contactsList)
 {
     let table = document.getElementById('contactTable');
-	//table.innerHTML = '';
 	
-    for(let i=0; i<data.length; i++)
+	// empty the table to enter the new data
+	clearTable(table);
+	
+    for(let i=0; i<contactsList.length; i++)
 	{
 		// insert the new row at the end of the table
 		let row = table.insertRow(-1);
 		
 		let cellpos = 0;
 		var colname = row.insertCell(cellpos);
-		colname.innerHTML = data[i].name;
+		colname.innerHTML = contactsList[i].name;
 			
 		var colmobile = row.insertCell(cellpos+1);
-		colmobile.innerHTML = data[i].mobile;
+		colmobile.innerHTML = contactsList[i].mobile;
 			
 		var colemail = row.insertCell(cellpos+2);
-		colemail.innerHTML = data[i].email;
+		colemail.innerHTML = contactsList[i].email;
     }
 }
 
