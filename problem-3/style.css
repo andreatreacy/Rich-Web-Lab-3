@@ -31,13 +31,14 @@ body {
 	width: 40%;
 	display: inline-block;
 	vertical-align: text-top;
+	max-height: 670px;
 	overflow: auto;
 }
 
 #profileTable {
 	width: 100%;
 	border: 1px solid black;
-  font-size: 18px;
+	font-size: 18px;
 }
 
 #profileTable td {
@@ -51,7 +52,7 @@ body {
 	width: 100%;
 	border: 1px solid black;
 	font-size: 18px;
-	height: 250px;
+	overflow: auto;
 }
 
 #repoTable td {
@@ -60,6 +61,11 @@ body {
   border: 1px solid black;
 }
 
-#repoTable tr {
-  height: 50px;
+#repoTable td {
+  height: 100px;
+}
+
+caption {
+	font-size: 20px;
+	margin-bottom: 6px;
 }
