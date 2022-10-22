@@ -1,0 +1,65 @@
+
+body {
+	text-align: center;
+}
+
+#searchSection {
+	padding: 50px;
+	background-color: #54c7c5;
+	border-radius: 25px;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+
+#usernameInput {
+	width: 80%;
+	display: inline-block;
+}
+
+#profileSection {
+	background-color: green;
+	width: 40%;
+	display: inline-block;
+	vertical-align: text-top;
+}
+
+#repoSection {
+	background-color: yellow;
+	width: 40%;
+	display: inline-block;
+	vertical-align: text-top;
+	overflow: auto;
+}
+
+#profileTable {
+	width: 100%;
+	border: 1px solid black;
+  font-size: 18px;
+}
+
+#profileTable td {
+  text-align: left;
+  padding: 12px;
+  border: 1px solid black;
+}
+
+
+#repoTable {
+	width: 100%;
+	border: 1px solid black;
+	font-size: 18px;
+	height: 250px;
+}
+
+#repoTable td {
+  text-align: left;
+  padding: 12px;
+  border: 1px solid black;
+}
+
+#repoTable tr {
+  height: 50px;
+}
