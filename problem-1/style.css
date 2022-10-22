@@ -1,35 +1,74 @@
 #filterInput {
-  background-image: url('/css/searchicon.png'); /* Add a search icon to input */
-  background-position: 10px 12px; /* Position the search icon */
-  background-repeat: no-repeat; /* Do not repeat the icon image */
-  width: 100%; /* Full-width */
-  font-size: 16px; /* Increase font-size */
-  padding: 12px 20px 12px 40px; /* Add some padding */
+  width: 200px; /* Full-width */
+  font-size: 15px; /* Increase font-size */
+  padding: 8px;
+  margin-left: 5px;
   border: 1px solid #ddd; /* Add a grey border */
   margin-bottom: 12px; /* Add some space below the input */
 }
 
+#noResult {
+	font-size: 16px;
+	color: red;
+	display: none;
+	font-weight: bold;
+}
+
+
+#error {
+	font-size: 16px;
+	color: red;
+	display: none;
+	font-weight: bold;
+}
+
+body {
+	text-align: center;
+}
+
+#inputSection {
+	padding: 50px;
+	background-color: #54c7c5;
+	border-radius: 25px;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+
+#nameInput, #mobileInput, #emailInput {
+	width: 200px;
+	display: inline-block;
+}
+
+p {
+	display: inline-block;
+}
+
+#nameCol, #mobileCol, #emailCol {
+	width:25%;
+}
+
+caption {
+	font-weight: bold;
+	margin-bottom: 4px;
+}
+
 #contactTable {
-  border-collapse: collapse; /* Collapse borders */
-  width: 100%; /* Full-width */
-  border: 1px solid #ddd; /* Add a grey border */
-  font-size: 18px; /* Increase font-size */
+  width: 80%;
+  border: 1px solid black;
+  font-size: 18px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #contactTable th, #contactTable td {
-  text-align: left; /* Left-align text */
-  padding: 12px; /* Add padding */
+  text-align: left;
+  padding: 12px;
+  border: 1px solid black;
 }
 
-#contactTable tr {
-  /* Add a bottom border to all table rows */
-  border-bottom: 1px solid #ddd;
-}
-
-#contactTable tr.header, #contactTable tr:hover {
-  /* Add a grey background color to the table header and on hover */
-  background-color: #f1f1f1;
-}
 
 /*make every odd row of the table gray*/
 #contactTable tr:nth-of-type(odd) {

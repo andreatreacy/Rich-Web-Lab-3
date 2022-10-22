@@ -6,15 +6,31 @@
 	<title>Problem 1</title>
 </head>
 <body>
-	<h1>Problem 1</h1>
-	<input type="text" id="filterInput" onkeyup="filter()" placeholder="Search for names..">
+	<h1>Phone Directory</h1>
+	<div id="inputSection">
+		<form>
+			<input type="text" id="nameInput" placeholder="Contact Name">
+			<input type="text" id="mobileInput" placeholder="Mobile Number">
+			<input type="text" id="emailInput" placeholder="Email">
+			<button type="button" id="addButton">Add Contact</button>
+		</form>
+		<div id="error">
+			<p>Input Error</p>
+		</div>
+	</div>
+	<p>Search Contact by Mobile No:</p><input type="text" id="filterInput" onkeyup="filter(contactsList)">
 
-<table id="contactTable">
-  <tr class="header">
-    <th onclick="sort(contactsList)" style="width:25%;">Name</th>
-    <th style="width:25%;">Mobile</th>
-	<th style="width:25%;">Email</th>
-  </tr>
-</table>
+	<table id="contactTable">
+	<caption>Contacts Summary</caption>
+	  <tr class="header">
+		<th onclick="sort(contactsList)" id="nameCol">Name</th>
+		<th id="mobileCol">Mobile</th>
+		<th id="emailCol">Email</th>
+	  </tr>
+	</table>
+	
+	<div id="noResult">
+		<p>No Results Found</p>
+	</div>
 </body>
 </html>
