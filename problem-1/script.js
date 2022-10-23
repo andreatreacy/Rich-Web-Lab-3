@@ -198,13 +198,13 @@ function fillTable(contactsList)
 		let row = table.insertRow(-1);
 		
 		let cellpos = 0;
-		var colname = row.insertCell(cellpos);
+		let colname = row.insertCell(cellpos);
 		colname.innerHTML = contactsList[i].name;
 			
-		var colmobile = row.insertCell(cellpos+1);
+		let colmobile = row.insertCell(cellpos+1);
 		colmobile.innerHTML = contactsList[i].mobile;
 			
-		var colemail = row.insertCell(cellpos+2);
+		let colemail = row.insertCell(cellpos+2);
 		colemail.innerHTML = contactsList[i].email;
     }
 }
