@@ -47,7 +47,7 @@ body {
 	width: 40%;
 	display: inline-block;
 	vertical-align: text-top;
-	max-height: 670px;
+	max-height: 670px; /*this will display 5 rows before needing to scroll*/
 	overflow: auto;
 }
 
@@ -58,9 +58,9 @@ body {
 }
 
 #profileTable td {
-  text-align: left;
-  padding: 12px;
-  border: 1px solid black;
+	text-align: left;
+	padding: 12px;
+	border: 1px solid black;
 }
 
 
@@ -72,13 +72,13 @@ body {
 }
 
 #repoTable td {
-  text-align: left;
-  padding: 12px;
-  border: 1px solid black;
+	text-align: left;
+	padding: 12px;
+	border: 1px solid black;
 }
 
 #repoTable td {
-  height: 100px;
+	height: 100px;
 }
 
 caption {

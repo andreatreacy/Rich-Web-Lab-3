@@ -1,30 +1,29 @@
 
+// list of contacts to make the table
 let contactsList = [
 	{'name':'Kate Green', 'mobile':'0858769009', 'email':'kgreen@gmail.com'},
     {'name':'John Smith', 'mobile':'0867890586', 'email':'jsmith@gmail.com'},
     {'name':'Paul Brown', 'mobile':'0858887945', 'email':'pbrown@gmail.com'},
 ];
 
-
+// add contact data to the table
 fillTable(contactsList);
 
 
 
-
+// add a listener to the add contact button
 let addButton = document.getElementById("addButton");
 addButton.addEventListener("click", validate);
 
+
+// validate the details of the added contact
 function validate() 
 {
 	// Validate the Name
 	
 	let nameInput = document.getElementById("nameInput").value;
-	console.log(nameInput);
-	  
-	console.log(/^[a-zA-Z]+$/.test(nameInput[0]));
 	let nameValid = true;
 	
-	console.log(nameInput.length);
 	// check if name input is not blank and has no more than 20 characters
 	if(nameInput.length <= 20 && nameInput.length != 0)
 	{
@@ -36,6 +35,7 @@ function validate()
 			}
 		}
 	}
+	// if name input is not valid
 	else
 	{
 		nameValid = false;
@@ -47,33 +47,32 @@ function validate()
 	let mobileInput = document.getElementById("mobileInput").value;
 	let mobileValid = true;
 	
-	console.log(isNaN("e"));
+	// check if the mobile number is the right length
 	if(mobileInput.length == 10)
 	{
 		for(let i=0; i<mobileInput.length; i++)
 		{
+			// check that the input is only numbers
 			if(isNaN(mobileInput[i]))
 			{
 				mobileValid = false;
 			}
 		}
 	}
+	// if mobile input is not valid
 	else
 	{
 		mobileValid = false;
 	}
-	console.log(">");
-	console.log(mobileValid);
 	
 	
 	// Validate the Email Address
 	
 	let emailInput = document.getElementById("emailInput").value;
 	let emailValid = true;
-	console.log(emailInput.length);
 	
 	// regex for correct email format
-	let emailFormat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+	let emailFormat = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 	
 	// if emailInput is not the correct format or is the wrong length it is not valid
 	if(!emailInput.match(emailFormat) || emailInput.length >= 40 || emailInput.length == 0)
@@ -82,8 +81,8 @@ function validate()
 	}
 	
 	
-	
 	// if all inputs are valid, add the contact
+
 	if(nameValid == true && mobileValid == true && emailValid == true)
 	{
 		// hide the error div if inputs are valid
@@ -107,20 +106,21 @@ function validate()
 }
 
 
-
+// add the new contact to the list
 function addContact(nameInput, mobileInput, emailInput)
-{
-	console.log("adding");
-	
+{	
+	// create new contact object
 	let newContact = {
 		name: nameInput,
 		mobile: mobileInput,
 		email: emailInput
 	};
 	
+	// add new contact to contactsList
 	contactsList.push(newContact);
-	fillTable(contactsList);
 	
+	// reload the table with the new contact
+	fillTable(contactsList);
 }
 
 
@@ -131,11 +131,11 @@ function addContact(nameInput, mobileInput, emailInput)
 
 
 // sort the table by the name column
-function sort(contactsList)
+function sort()
 {	
 	let isSorted = true;
 
-	// check if the table is alread sorted in ascending order
+	// check if the table is already sorted in ascending order
 	for(let i=0; i<contactsList.length-1; i++) 
 	{
 		if(contactsList[i].name > contactsList[i+1].name) 
@@ -184,7 +184,7 @@ function clearTable(table)
 }
 
 
-
+// add data to the table
 function fillTable(contactsList)
 {
     let table = document.getElementById('contactTable');
@@ -212,8 +212,8 @@ function fillTable(contactsList)
 
 
 
-
-function filter(contactsList)
+// filter the table by mobile number
+function filter()
 {
 	// get the search input
 	let input = document.getElementById("filterInput").value;
